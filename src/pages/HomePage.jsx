@@ -8,7 +8,7 @@ import axios from "axios";
 import Layout from "./../components/Layout/Layout";
 import { AiOutlineReload } from "react-icons/ai";
 import "../styles/Homepage.css";
-
+import Uzii from '../assets/Uzii.jpg'
 const HomePage = () => {
   const navigate = useNavigate();
   //const [cart, setCart] = useCart();
@@ -121,10 +121,11 @@ const HomePage = () => {
     <Layout title={"ALl Products - Best offers "}>
       {/* banner image */}
       <img
-        src="/images/banner.png"
+       src={Uzii}
         className="banner-img"
         alt="bannerimage"
         width={"100%"}
+        height={"100%"}
       />
       {/* banner image */}
       <div className="container-fluid row mt-3 home-page">

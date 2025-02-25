@@ -24,7 +24,7 @@ const UpdateProduct = () => {
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/category/get-category"
+        "https://mnbvcxx.vercel.app/api/v1/category/get-category"
       );
       if (data?.success) {
         setCategories(data?.category);
@@ -39,7 +39,7 @@ const UpdateProduct = () => {
   const getSingleProduct = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/product/get-product/${slug}`
+        `https://mnbvcxx.vercel.app/api/v1/product/get-product/${slug}`
       );
       if (data?.success) {
         const product = data.product;
@@ -76,7 +76,7 @@ const UpdateProduct = () => {
       productData.append("shipping", shipping);
 
       const { data } = await axios.put(
-        `http://localhost:8080/api/v1/product/update-product/${productId}`,
+        `https://mnbvcxx.vercel.app/api/v1/product/update-product/${productId}`,
         productData
       );
       if (data?.success) {
@@ -100,7 +100,7 @@ const UpdateProduct = () => {
       if (!answer) return;
 
       const { data } = await axios.delete(
-        `http://localhost:8080/api/v1/product/delete-product/${productId}`
+        `https://mnbvcxx.vercel.app/api/v1/product/delete-product/${productId}`
       );
       if (data?.success) {
         alert("Product Deleted Successfully");
@@ -166,7 +166,7 @@ const UpdateProduct = () => {
                 ) : (
                   <div className="text-center">
                     <img
-                      src={`http://localhost:8080/api/v1/product/product-photo/${productId}`}
+                      src={`https://mnbvcxx.vercel.app/api/v1/product/product-photo/${productId}`}
                       alt="product_photo"
                       height={"200px"}
                       className="img img-responsive"

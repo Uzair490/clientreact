@@ -26,7 +26,7 @@ const ProductForm = ({ isEdit }) => {
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/category/get-category"
+        "https://mnbvcxx.vercel.app/api/v1/category/get-category"
       );
       if (data?.success) {
         setCategories(data?.category);
@@ -41,7 +41,7 @@ const ProductForm = ({ isEdit }) => {
   const getSingleProduct = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/product/get-product/${params.slug}`
+        `https://mnbvcxx.vercel.app/api/v1/product/get-product/${params.slug}`
       );
       setName(data.product.name);
       setId(data.product._id);
@@ -75,7 +75,7 @@ const ProductForm = ({ isEdit }) => {
       productData.append("category", category);
 
       const { data } = await axios.post(
-        "http://localhost:8080/api/v1/product/create-product",
+        "https://mnbvcxx.vercel.app/api/v1/product/create-product",
         productData
       );
       if (data?.success) {
@@ -103,7 +103,7 @@ const ProductForm = ({ isEdit }) => {
       productData.append("category", category);
 
       const { data } = await axios.put(
-        `http://localhost:8080/api/v1/product/update-product/${id}`,
+        `https://mnbvcxx.vercel.app/api/v1/product/update-product/${id}`,
         productData
       );
       if (data?.success) {
@@ -124,7 +124,7 @@ const ProductForm = ({ isEdit }) => {
       let answer = window.prompt("Are You Sure want to delete this product?");
       if (!answer) return;
       const { data } = await axios.delete(
-        `http://localhost:8080/api/v1/product/delete-product/${id}`
+        `https://mnbvcxx.vercel.app/api/v1/product/delete-product/${id}`
       );
       alert("Product Deleted Successfully");
       navigate("/dashboard/admin/products");
